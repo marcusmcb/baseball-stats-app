@@ -1,0 +1,1 @@
+Baseball player data sample app, built with React, Express, MongoDB, and ChatGPT.  Marcus McBride, 2024.

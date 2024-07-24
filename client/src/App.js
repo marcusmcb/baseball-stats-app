@@ -8,7 +8,7 @@ const App = () => {
 	const [selectedPlayer, setSelectedPlayer] = useState(null)
 	const [isEditing, setIsEditing] = useState(null)
 	const [playerDescription, setPlayerDescription] = useState('')
-	
+
 	useEffect(() => {
 		async function fetchPlayers() {
 			const data = await getPlayers()
@@ -22,7 +22,7 @@ const App = () => {
 			setSelectedPlayer(null)
 			setPlayerDescription('')
 			return
-		}		
+		}
 		setSelectedPlayer(player)
 		handlePlayerDescription(player.name)
 	}
@@ -113,7 +113,7 @@ const App = () => {
 									<td colSpan='5'>
 										<div className='player-description'>
 											<h2>{selectedPlayer.name}</h2>
-											<p>{playerDescription}</p>											
+											<p>{playerDescription}</p>
 											<button onClick={() => setSelectedPlayer(null)}>
 												Close
 											</button>
