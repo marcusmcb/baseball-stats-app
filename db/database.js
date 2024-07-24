@@ -1,8 +1,10 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config()
 
-// Connect to MongoDB
+// connect to MongoDB
 mongoose
-	.connect('mongodb://127.0.0.1:27017/baseball', {
+	.connect(process.env.MONGO_DB_URI, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	})
@@ -13,7 +15,7 @@ mongoose
 		console.error('Failed to connect to MongoDB', err)
 	})
 
-// Schema and Model
+// player schema for MongoDB collection
 const playerSchema = new mongoose.Schema({
 	name: String,
 	hits: Number,
@@ -22,6 +24,7 @@ const playerSchema = new mongoose.Schema({
 	id: Number,
 })
 
+// define player model for use in server.js
 const Player = mongoose.model('Player', playerSchema)
 
 module.exports = Player

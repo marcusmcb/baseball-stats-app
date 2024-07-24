@@ -23,14 +23,12 @@ export const editPlayer = async (id, player) => {
 	}
 }
 
-export const getPlayerDescription = async (name) => {
-	console.log('Selected player: ', name)
+export const getPlayerDescription = async (name) => {	
 	try {
 		const response = await axios.post(
 			'http://localhost:5000/api/player-description',
 			{ name }
-		)
-		console.log(response.data.description)
+		)		
 		return response.data.description
 	} catch (error) {
 		console.error('Error fetching player description:', error)

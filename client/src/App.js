@@ -6,8 +6,8 @@ import './App.css'
 const App = () => {
 	const [players, setPlayers] = useState([])
 	const [selectedPlayer, setSelectedPlayer] = useState(null)
-	const [isEditing, setIsEditing] = useState(null)
 	const [playerDescription, setPlayerDescription] = useState('')
+	const [isEditing, setIsEditing] = useState(null)	
 
 	useEffect(() => {
 		async function fetchPlayers() {

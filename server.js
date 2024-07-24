@@ -16,15 +16,10 @@ const PORT = process.env.PORT || 5000
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/', (req, res) => {
-	res.send('Hello World!')
-})
-
 // endpoint to retrieve API data and insert into MongoDB
 app.get('/api/players', async (req, res) => {
 	try {
-		await Player.deleteMany({})
-		console.log('Cleared existing player data')
+		await Player.deleteMany({})		
 		const response = await axios.get(
 			'https://api.sampleapis.com/baseball/hitsCareer'
 		)
@@ -59,9 +54,8 @@ app.get('/api/players', async (req, res) => {
 	}
 })
 
-// edit a player by ID
-app.put('/api/players/:id', async (req, res) => {
-	console.log('EDITING PLAYER: ', req.body)
+// endpoint to edit a player's data by ID
+app.put('/api/players/:id', async (req, res) => {	
 	try {
 		const player = await Player.findOneAndUpdate(
 			{ id: Number(req.params.id) },
@@ -77,7 +71,7 @@ app.put('/api/players/:id', async (req, res) => {
 	}
 })
 
-// Add this route to call Hugging Face API for player description
+// endpoint to return player description from ChatGPT
 app.post('/api/player-description', async (req, res) => {
 	const { name } = req.body
 	try {
@@ -111,6 +105,12 @@ app.post('/api/player-description', async (req, res) => {
 	}
 })
 
+// endpoint to test express API server
+app.get('/', (req, res) => {
+	res.send('Hello World!')
+})
+
+// log statement to confirm server is running
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`)
 })

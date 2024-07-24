@@ -38,8 +38,7 @@ h1 {
 
 .player-name {
 	cursor: pointer;
-	color: rgb(53, 47, 79);
-	/* text-decoration: underline; */
+	color: rgb(53, 47, 79);	
 }
 
 .player-name:hover {
