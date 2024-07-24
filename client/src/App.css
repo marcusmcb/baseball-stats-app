@@ -1,0 +1,103 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+.main-page {
+  margin-left: 10%;
+  margin-right: 10%
+}
+
+.player-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 20px 0;
+}
+
+.player-table th,
+.player-table td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+.player-table th {
+	background-color: #f2f2f2;
+}
+
+.player-table tr:hover {
+	background-color: #f1f1f1;
+}
+
+.player-table tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+.player-name {
+	cursor: pointer;
+	color: rgb(53, 47, 79);
+	/* text-decoration: underline; */
+}
+
+.player-name:hover {
+	color: #377b39;
+}
+
+.description-row td {
+	padding: 0;
+}
+
+.player-description {
+	margin-top: 20px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	max-width: 100%;
+}
+
+input {
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+button {
+	padding: 5px 10px;
+	cursor: pointer;
+	background-color: darkslategrey;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #377b39;
+}
+
+.close-button {
+	background-color: #f44336; /* Red */
+}
+
+.close-button:hover {
+	background-color: #e53935; /* Darker red */
+}
+
+@media (max-width: 600px) {
+	.player-table,
+	.player-table th,
+	.player-table td {
+		display: block;
+		width: 100%;
+	}
+
+	.player-table th {
+		background-color: transparent;
+	}
+
+	.player-description {
+		width: 100%;
+		margin: 10px 0;
+	}
+}
